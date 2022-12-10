@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.edamama.util.Util;
+
 public class ImplicitWait {
 	
 	@SuppressWarnings("deprecation")
@@ -13,17 +15,7 @@ public class ImplicitWait {
 	{
 		System.out.println("Inside ImplicitWait class");
 		ImplicitWait implicitWait = new ImplicitWait();
-		implicitWait.excute(implicitWait.getDriverPath());
-	}
-	
-	public String getDriverPath() {
-		System.out.println("Inside getName");
-		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("chromedriver.exe").getFile());
-		
-		String absolutePath = file.getAbsolutePath();
-		System.out.println("absolutePath: "+absolutePath);
-		return absolutePath;
+		implicitWait.excute(new Util().getDriverPath());
 	}
 	
 	public void excute(String path) {

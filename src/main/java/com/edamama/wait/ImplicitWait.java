@@ -13,34 +13,16 @@ public class ImplicitWait {
 	{
 		System.out.println("Inside ImplicitWait class");
 		ImplicitWait implicitWait = new ImplicitWait();
-		implicitWait.excute(implicitWait.getName());
-//		implicitWait.getName();
-		
-//		System.setProperty("webdriver.chrome.driver","C:\\Users\\Nilesh\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
-//		System.setProperty("webdriver.chrome.driver","chrome-driver/chromedriver.exe");
-//		
-//		WebDriver driver = new ChromeDriver();
-//		
-//		ClassLoader classLoader = getClass().getClassLoader();
-//		File file = new File(classLoader.getResource("llave.txt").getFile());
-//		
-//		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//		
-//		driver.get("https://www.facebook.com");
-		
+		implicitWait.excute(implicitWait.getDriverPath());
 	}
 	
-	public String getName() {
+	public String getDriverPath() {
 		System.out.println("Inside getName");
 		ClassLoader classLoader = getClass().getClassLoader();
 		File file = new File(classLoader.getResource("chromedriver.exe").getFile());
 		
 		String absolutePath = file.getAbsolutePath();
-		// path only
-		String filePath = absolutePath.
-		    substring(0, absolutePath.lastIndexOf(File.separator));
 		System.out.println("absolutePath: "+absolutePath);
-		System.out.println("filePath: "+filePath);
 		return absolutePath;
 	}
 	
